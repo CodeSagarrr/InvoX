@@ -1,0 +1,19 @@
+Profile setup:  logo upload, bank details 
+
+completed creation of profile with avatar 
+
+Next is i have to add edit option for change thier profile
+
+I have completed profile work with all functionality like update specific user input and crete user
+
+
+
+//
+
+Now i am gonna start new task which is client management:
+
+: . Client Management
+
+Add clients: Name, email, phone, company, GST number, address
+View all clients list
+Edit/Delete clients
