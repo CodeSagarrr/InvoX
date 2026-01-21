@@ -21,7 +21,7 @@ function SideBarTopNav({ user }:any) {
         <PopoverTrigger>
           <div className="relative max-w-80 flex items-center justify-between hover:bg-gray-100 rounded-lg pl-1 pr-3 cursor-pointer transition-all">
             <div className="flex gap-1 items-center">
-              <Logo width={48} heigth={48} />
+              <Logo width={50} heigth={50} />
               <h1 className="text-xl font-[geom] font-semibold">
                 Invo<span className="text-orange-400">X</span>
               </h1>

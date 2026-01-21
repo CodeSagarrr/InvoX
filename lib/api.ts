@@ -4,16 +4,6 @@ const api = axios.create({
   baseURL: process.env.NEXT_PUBLIC_API_URL,
 });
 
-interface CreateProfileInterface {
-  name: string;
-  email: string;
-  businessName: string;
-  logo: string;
-  gstNumber: string;
-  pan: string;
-  address: string;
-}
-
 export const createProfile = async (payload: Object) => {
   const { data } = await api.post("/create-profile", payload, {
     withCredentials: true,
@@ -28,4 +18,12 @@ export const getUserProfileData = async () => {
   });
 
   return data?.data?.[0];
+};
+
+export const CreateClient = async (payLoad: object) => {
+  const { data } = await api.post("/create-client", payLoad, { 
+    withCredentials: true 
+  });
+
+  return data;
 };

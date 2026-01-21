@@ -1,14 +1,13 @@
 "use client";
 import React, { useState, useRef } from "react";
 import { Save } from "lucide-react";
-import { useRouter } from "next/navigation";
-import Loader from "@/components/ui/Loader";
 import { useAppContext } from "@/app/Context/Context";
 import { useKindeBrowserClient } from "@kinde-oss/kinde-auth-nextjs";
 import { useQueryClient, useMutation } from "@tanstack/react-query";
 import { createProfile } from "@/lib/api";
 import { toast } from "sonner";
 import Image from "next/image";
+import { Spinner } from "@/components/ui/spinner";
 
 export default function ProfileSetup() {
   // States
@@ -63,7 +62,6 @@ export default function ProfileSetup() {
     onSuccess(data) {
       toast.success(data.message);
       queryClient.invalidateQueries({ queryKey: ["currentUser"] });
-      console.log(data);
     },
     onError : (error : any) => {
       const errorMessage = error?.response?.data?.error || 'Something went wrong';
@@ -262,7 +260,7 @@ export default function ProfileSetup() {
                 style={{ backgroundColor: "#FE9900" }}
               >
                 {handleMutation.isPending ? (
-                  <Loader />
+                  <Spinner className="size-6" />
                 ) : (
                   <p className="flex items-center gap-2 ">
                     <Save size={20} />

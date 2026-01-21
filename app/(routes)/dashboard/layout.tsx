@@ -14,7 +14,7 @@ export default function RootLayout({
                     <Sidebar/>
                 </div>
 
-                <div className="col-span-4 ml-72">
+                <div className="md:col-span-4 col-span-full md:ml-72 ml-2 h-screen">
                 {children} 
                 </div>
             </main> 

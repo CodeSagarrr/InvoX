@@ -17,3 +17,5 @@ Now i am gonna start new task which is client management:
 Add clients: Name, email, phone, company, GST number, address
 View all clients list
 Edit/Delete clients
+
+1 : Create Add client functionality

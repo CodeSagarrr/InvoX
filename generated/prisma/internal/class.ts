@@ -23,7 +23,7 @@ const config: runtime.GetPrismaClientConfig = {
       "value": "prisma-client"
     },
     "output": {
-      "value": "/Users/technicalvishwakarmaji/Downloads/React/fig-project/generated/prisma",
+      "value": "C:\\react\\InvoX\\generated\\prisma",
       "fromEnvVar": null
     },
     "config": {
@@ -32,12 +32,16 @@ const config: runtime.GetPrismaClientConfig = {
     "binaryTargets": [
       {
         "fromEnvVar": null,
-        "value": "darwin-arm64",
+        "value": "windows",
         "native": true
+      },
+      {
+        "fromEnvVar": null,
+        "value": "windows"
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "/Users/technicalvishwakarmaji/Downloads/React/fig-project/prisma/schema.prisma",
+    "sourceFilePath": "C:\\react\\InvoX\\prisma\\schema.prisma",
     "isCustomOutput": true
   },
   "relativePath": "../../prisma",
@@ -47,6 +51,7 @@ const config: runtime.GetPrismaClientConfig = {
     "db"
   ],
   "activeProvider": "mongodb",
+  "postinstall": false,
   "inlineDatasources": {
     "db": {
       "url": {
@@ -55,8 +60,8 @@ const config: runtime.GetPrismaClientConfig = {
       }
     }
   },
-  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\n// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?\n// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init\n\ngenerator client {\n  provider = \"prisma-client\"\n  output   = \"../generated/prisma\"\n}\n\ndatasource db {\n  provider = \"mongodb\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel User {\n  id           String   @id @default(auto()) @map(\"_id\") @db.ObjectId\n  kindeId      String   @unique // From Clerk\n  email        String   @unique\n  name         String\n  businessName String\n  logo         String? // URL to uploaded image\n  gstNumber    String?\n  pan          String?\n  address      String?\n  plan         Plan     @default(FREE)\n  invoiceCount Int      @default(0)\n  createdAt    DateTime @default(now())\n  updatedAt    DateTime @updatedAt\n}\n\nmodel Client {\n  id           String   @id @default(auto()) @map(\"_id\") @db.ObjectId\n  name         String\n  email        String   @unique\n  phone        String\n  company      String?\n  gstNumber    String?\n  address      String?\n  totalBilled  Int?     @default(0)\n  invoiceCount Int?     @default(0)\n  createdAt    DateTime @default(now())\n  updatedAt    DateTime @updatedAt\n}\n\nenum Plan {\n  FREE\n  PRO\n}\n\nenum InvoiceStatus {\n  DRAFT\n  SENT\n  PAID\n  OVERDUE\n}\n",
-  "inlineSchemaHash": "bbc05f34c4ef709f82a7cdfd681ae7374296bb3b29034b21afaf984b446ec652",
+  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\n// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?\n// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init\n\ngenerator client {\n  provider      = \"prisma-client\"\n  binaryTargets = [\"native\", \"windows\"]\n  output        = \"../generated/prisma\"\n}\n\ndatasource db {\n  provider = \"mongodb\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel User {\n  id           String   @id @default(auto()) @map(\"_id\") @db.ObjectId\n  kindeId      String   @unique // From Clerk\n  email        String   @unique\n  name         String\n  businessName String\n  logo         String? // URL to uploaded image\n  gstNumber    String?\n  pan          String?\n  address      String?\n  plan         Plan     @default(FREE)\n  invoiceCount Int      @default(0)\n  createdAt    DateTime @default(now())\n  updatedAt    DateTime @updatedAt\n}\n\nmodel Client {\n  id           String   @id @default(auto()) @map(\"_id\") @db.ObjectId\n  name         String\n  email        String   @unique\n  phone        String\n  company      String?\n  gstNumber    String?\n  address      String?\n  totalBilled  Int?     @default(0)\n  invoiceCount Int?     @default(0)\n  createdAt    DateTime @default(now())\n  updatedAt    DateTime @updatedAt\n}\n\nenum Plan {\n  FREE\n  PRO\n}\n\nenum InvoiceStatus {\n  DRAFT\n  SENT\n  PAID\n  OVERDUE\n}\n",
+  "inlineSchemaHash": "4e1913b6a41623a8608bdd9255065a139a10435430782db3b46d3f169dc72d49",
   "copyEngine": true,
   "runtimeDataModel": {
     "models": {},
